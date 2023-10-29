@@ -1,0 +1,16 @@
+.button {
+  border-radius: 50px;
+  background: var(--black);
+  display: inline-flex;
+  padding: 12px 42px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  color: var(--full-white);
+  border: 0;
+
+  &:hover {
+    background: var(--dark-white);
+    color: var(--dark-grey);
+  }
+}

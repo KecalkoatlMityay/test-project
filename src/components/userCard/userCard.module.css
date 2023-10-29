@@ -1,0 +1,52 @@
+.userCard {
+  padding: 24px;
+  background-color: var(--full-white);
+  border-radius: 16px;
+  display: flex;
+  gap: 20px;
+  width: 360px;
+}
+
+.userData {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  & .userName {
+    font: var(--desktop-font-headline);
+    color: var(--accent);
+  }
+}
+
+.userTitle {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.userMenu {
+  margin-left: auto;
+  cursor: pointer;
+  &:hover * {
+    stroke: var(--accent);
+    fill: var(--accent);
+  }
+}
+
+.isActive * {
+  stroke: var(--accent);
+  fill: var(--accent);
+}
+
+.companyName {
+  font: var(--desktop-font-text2);
+  color: var(--dark-grey);
+}
+
+.userCity {
+  font: var(--caption);
+  color: var(--grey);
+  margin-top: auto;
+}

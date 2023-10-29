@@ -1,0 +1,19 @@
+.small {
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+}
+
+.medium {
+  height: 120px;
+  width: 112px;
+  border-radius: 8px;
+}
+
+.big {
+  max-width: 360px;
+}
+
+.archived {
+  filter: grayscale(1);
+}

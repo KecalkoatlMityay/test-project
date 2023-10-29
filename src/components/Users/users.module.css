@@ -1,0 +1,15 @@
+.userCards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 28px 0 0;
+  padding-bottom: 40px;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.title {
+  font: var(--desktop-font-title);
+  color: var(--black);
+  display: inline-block;
+  padding-top: 40px;
+}

@@ -1,0 +1,11 @@
+.input {
+  color: var(--grey);
+  font: var(--desktop-font-text1);
+
+  &:hover {
+    color: var(--accent);
+  }
+  &:active {
+    color: var(--black);
+  }
+}

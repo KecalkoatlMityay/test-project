@@ -1,38 +1,29 @@
-.App {
-  text-align: center;
+:root {
+  --full-white: #fdfdfd;
+  --dark-white: #f4f4f4;
+  --light-grey: #dadada;
+  --grey: #9c9c9c;
+  --dark-grey: #595959;
+  --black: #161616;
+  --accent: #22a0bc;
+
+  --desktop-font-title: semi-bold 24px;
+  --desktop-font-headline: semi-bold 20px;
+  --desktop-font-text1-bold: semi-bold 18px;
+  --desktop-font-text1: regular 18px;
+  --desktop-font-text2-bold: semi-bold 16px;
+  --desktop-font-text2: regular 16px;
+  --caption: regular 14px;
+
+  --mobile-font-title: semi-bold 24px;
+  --mobile-font-headline: semi-bold 18px;
+  --mobile-font-text1-bold: semi-bold 16px;
+  --mobile-font-text1: regular 16px;
+  --mobile-font-text2-bold: semi-bold 14px;
+  --mobile-font-text2: regular 14px;
+  --mobile-caption: regular 12px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  font-family: "Manrope", sans-serif;
 }
