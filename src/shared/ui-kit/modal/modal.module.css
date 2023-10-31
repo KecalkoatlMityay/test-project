@@ -33,3 +33,15 @@
   right: 18px;
   cursor: pointer;
 }
+
+@media (width<=768px) {
+  .modalWindow {
+    width: auto;
+    height: auto;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: fit-content;
+  }
+}

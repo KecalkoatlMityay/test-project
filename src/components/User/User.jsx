@@ -52,7 +52,9 @@ const User = () => {
     });
   };
 
-  console.log(isSuccess);
+  const onSpanClick = (e) => {
+    e.target.className = style.activeSpan;
+  };
   useEffect(() => {
     if (isSuccess) {
       setIsModalOpen(true);
@@ -82,13 +84,18 @@ const User = () => {
         <aside className={style.aside}>
           <Avatar size="big" />
           <div className={style.profileData}>
-            <span>Данные профиля</span>
-
-            <span>Рабочее пространство</span>
-
-            <span>Приватность</span>
-
-            <span>Безопасность</span>
+            <span className={style.spanProfileData} onClick={onSpanClick}>
+              Данные профиля
+            </span>
+            <span className={style.spanProfileData} onClick={onSpanClick}>
+              Рабочее пространство
+            </span>
+            <span className={style.spanProfileData} onClick={onSpanClick}>
+              Приватность
+            </span>
+            <span className={style.spanProfileData} onClick={onSpanClick}>
+              Безопасность
+            </span>
           </div>
         </aside>
         <div className={style.userData}>

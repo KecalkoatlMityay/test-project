@@ -1,5 +1,5 @@
 /*import google fonts*/
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
   --full-white: #fdfdfd;
@@ -16,19 +16,25 @@
   --desktop-font-text1-bold: 600 18px "Manrope", sans-serif;
   --desktop-font-text1: 400 18px "Manrope", sans-serif;
   --desktop-font-text2-bold: 600 16px "Manrope", sans-serif;
-  --desktop-font-text2: 400 16px "Manrope", sans-serif;
-  --caption: 400 14px "Manrope", sans-serif;
+  --desktop-font-text2: 500 16px "Manrope", sans-serif;
+  --caption: 500 14px "Manrope", sans-serif;
 
   --mobile-font-title: 600 24px "Manrope", sans-serif;
   --mobile-font-headline: 600 18px "Manrope", sans-serif;
   --mobile-font-text1-bold: 600 16px "Manrope", sans-serif;
   --mobile-font-text1: 400 16px "Manrope", sans-serif;
   --mobile-font-text2-bold: 600 14px "Manrope", sans-serif;
-  --mobile-font-text2: 400 14px "Manrope", sans-serif;
+  --mobile-font-text2: 500 14px "Manrope", sans-serif;
   --mobile-caption: 400 12px "Manrope", sans-serif;
+  --mobile-font-small: 600 10px "Manrope", sans-serif;
 }
 
 body {
   font-family: "Manrope", sans-serif;
   margin: 0;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px solid var(--light-grey);
 }

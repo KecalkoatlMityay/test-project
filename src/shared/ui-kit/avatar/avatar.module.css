@@ -27,7 +27,7 @@
 @media (width <= 768px) {
   .medium {
     height: 120px;
-    width: 287px;
+    width: 80%;
     border-radius: 8px;
   }
 }

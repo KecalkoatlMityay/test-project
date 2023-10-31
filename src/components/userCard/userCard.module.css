@@ -54,7 +54,7 @@
   padding-top: 12px;
 }
 
-@media (width<= 768px){
+@media (width<= 768px) {
   .userCard {
     padding: 16px;
     width: 162px;
@@ -75,5 +75,17 @@
 
   .userCity {
     font: var(--mobile-caption);
+  }
+
+  .userTitle {
+    font: var(--mobile-font-headline);
+  }
+
+  .companyName {
+    font: var(--mobile-font-text2-bold);
+  }
+
+  .userCity {
+    font: var(--mobile-font-small);
   }
 }

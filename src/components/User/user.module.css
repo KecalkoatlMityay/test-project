@@ -20,6 +20,8 @@
   & span {
     padding-bottom: 12px;
     border-bottom: 1px solid var(--light-grey);
+    font: var(--grey);
+    cursor: pointer;
   }
 }
 
@@ -42,4 +44,46 @@
   gap: 10px;
   width: 420px;
   margin-top: 24px;
+}
+
+.spanProfileData {
+  color: var(--grey);
+  font: var(--desktop-font-text2);
+  &:hover {
+    color: var(--accent);
+  }
+}
+
+span.activeSpan {
+  color: var(--black);
+  font: var(--desktop-font-text2-bold);
+}
+
+@media (width<=768px) {
+  .section {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+  }
+  .aside {
+    display: flex;
+    flex-direction: column;
+    padding: 28px;
+    gap: 24px;
+    width: 85%;
+    & span {
+      font: var(--mobile-font-text2);
+    }
+  }
+  .userData {
+    padding: 28px;
+    width: 85%;
+  }
+  .form {
+    width: 80%;
+    color: var(--black);
+    & label {
+      font: var(--mobile-font-text1-bold);
+    }
+  }
 }
