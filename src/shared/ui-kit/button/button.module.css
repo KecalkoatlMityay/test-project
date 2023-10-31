@@ -1,14 +1,26 @@
 .button {
   border-radius: 50px;
-  background: var(--black);
   display: inline-flex;
   padding: 12px 42px;
   justify-content: center;
   align-items: center;
   gap: 12px;
-  color: var(--full-white);
   border: 0;
+  cursor: pointer;
+}
 
+.simple {
+  background: none;
+  color: var(--dark-grey);
+  padding-left: 0;
+  &:hover {
+    color: var(--accent);
+  }
+}
+
+.filled {
+  background: var(--black);
+  color: var(--full-white);
   &:hover {
     background: var(--dark-white);
     color: var(--dark-grey);

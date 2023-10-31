@@ -1,16 +1,14 @@
 import { useGetUsersQuery } from "../../shared/api/rtkApi";
+import {selectHidden} from "../../store/archivedSlice/selectors/selectHidden";
 import { UserCard } from "../userCard/UserCard";
 import { useDispatch, useSelector } from "react-redux";
-import { setIsArchived } from "../../shared/store/archivedSlice/archivedSlice";
-import { selectArchived } from "../../shared/store/archivedSlice/selectors/selectArchived";
+import {toggleIsArchived, setIsHidden} from "../../store/archivedSlice/archivedAndHiddenSlice";
+import { selectArchived } from "../../store/archivedSlice/selectors/selectArchived";
 import style from "./users.module.css";
 
 const Users = () => {
-  const archive = useSelector(selectArchived);
-  const dispatch = useDispatch();
-  const setArchived = (id) => {
-    dispatch(setIsArchived(id));
-  };
+  const archiveIds = useSelector(selectArchived);
+  const hiddenIds = useSelector(selectHidden)
 
   const { data, error, isLoading, isError } = useGetUsersQuery();
   if (isLoading) {
@@ -20,8 +18,8 @@ const Users = () => {
     return <span>{JSON.stringify(error.message)}</span>;
   }
 
-  const activeUsers = data.filter((user) => !archive.includes(user.id));
-  const archivedUsers = data.filter((user) => archive.includes(user.id));
+  const activeUsers = data.filter((user) => !archiveIds.includes(user.id) && !hiddenIds.includes(user.id) );
+  const archivedUsers = data.filter((user) => archiveIds.includes(user.id) && !hiddenIds.includes(user.id) );
   return (
     <div>
       <span className={style.title}>Активные</span>
@@ -29,7 +27,7 @@ const Users = () => {
       <div className={style.userCards}>
         {activeUsers.map((user) => {
           return (
-            <UserCard key={user.id} user={user} setArchived={setArchived} />
+            <UserCard key={user.id} user={user} />
           );
         })}
       </div>
@@ -40,7 +38,7 @@ const Users = () => {
           <div className={style.userCards}>
             {archivedUsers.map((user) => {
               return (
-                <UserCard key={user.id} user={user} setArchived={setArchived} />
+                <UserCard key={user.id} user={user} />
               );
             })}
           </div>

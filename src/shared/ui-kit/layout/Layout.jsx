@@ -18,7 +18,7 @@ export const Layout = () => {
           className={style.logo}
         >
           <LogoSign />
-          <span>
+          <span className={style.logoText}>
             at-<strong>work</strong>
           </span>
         </div>

@@ -5,6 +5,7 @@
   display: flex;
   gap: 20px;
   width: 360px;
+  box-sizing: border-box;
 }
 
 .userData {
@@ -15,6 +16,7 @@
   & .userName {
     font: var(--desktop-font-headline);
     color: var(--accent);
+    overflow: hidden;
   }
 }
 
@@ -41,7 +43,7 @@
 }
 
 .companyName {
-  font: var(--desktop-font-text2);
+  font: var(--desktop-font-text2-bold);
   color: var(--dark-grey);
 }
 
@@ -49,4 +51,29 @@
   font: var(--caption);
   color: var(--grey);
   margin-top: auto;
+  padding-top: 12px;
+}
+
+@media (width<= 768px){
+  .userCard {
+    padding: 16px;
+    width: 162px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .userData {
+    height: 100%;
+    & .userName {
+      font: var(--mobile-font-headline);
+    }
+  }
+
+  .companyName {
+    font: var(--mobile-font-text2-bold);
+  }
+
+  .userCity {
+    font: var(--mobile-caption);
+  }
 }

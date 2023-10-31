@@ -1,28 +1,37 @@
-import { Button } from "../../shared/ui-kit/button/Button";
 import { Avatar } from "../../shared/ui-kit/avatar/Avatar";
+import {setIsHidden, toggleIsArchived} from "../../store/archivedSlice/archivedAndHiddenSlice";
 import style from "./userCard.module.css";
 import { DotsIcon } from "../../shared/ui-kit/icons/DotsIcon";
 import { useMemo, useState } from "react";
 import cls from "classnames";
 import { Dropdown } from "../../shared/ui-kit/dropdown/Dropdown";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { selectIsUserArchived } from "../../shared/store/archivedSlice/selectors/selectIsUserArchived";
+import {useDispatch, useSelector} from "react-redux";
+import { selectIsUserArchived } from "../../store/archivedSlice/selectors/selectIsUserArchived";
 
-export const UserCard = ({ user, setArchived }) => {
+export const UserCard = ({ user }) => {
   const [isUserMenuOpened, setIsUserMenuOpened] = useState(false);
   const toggleIsUserMenuOpened = () => {
     setIsUserMenuOpened(!isUserMenuOpened);
   };
+
+  const dispatch = useDispatch();
+  const setArchived = (id) => {
+    dispatch(toggleIsArchived(id));
+  };
+  const setHidden = (id) => {
+    dispatch(setIsHidden(id));
+  }
   const {
     username,
     address: { city },
     company,
   } = user;
+
   const navigate = useNavigate();
   const isArchived = useSelector(selectIsUserArchived(user.id));
   const items = useMemo(() => {
-    let dropdowmItems = [
+    let dropdownItems = [
       {
         text: isArchived ? "Активировать" : "Архивировать",
         onClick: () => {
@@ -31,21 +40,21 @@ export const UserCard = ({ user, setArchived }) => {
       },
     ];
     if (!isArchived) {
-      dropdowmItems.unshift({
+      dropdownItems.unshift({
         text: "Редактировать",
         onClick: () => {
           navigate(`${user.id}`);
         },
       });
-      dropdowmItems.push({
+      dropdownItems.push({
         text: "Скрыть",
         onClick: () => {
-          console.log(user.id);
+            setHidden(user.id);
         },
       });
     }
-    return dropdowmItems;
-  }, [user, setArchived]);
+    return dropdownItems;
+  }, [isArchived, user.id, navigate]);
   return (
     <div className={style.userCard}>
       <Avatar size={"medium"} isArchived={isArchived} />

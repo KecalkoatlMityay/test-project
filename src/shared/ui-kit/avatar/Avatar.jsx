@@ -12,7 +12,7 @@ export const Avatar = ({ src, size, isArchived }) => {
     <img
       src={src || avatarSrc}
       alt="avatar"
-      className={cls(sizeMapper[size], { [style.archived]: isArchived })}
+      className={cls(style.avatar, sizeMapper[size], { [style.archived]: isArchived })}
     />
   );
 };

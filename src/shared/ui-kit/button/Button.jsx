@@ -1,9 +1,23 @@
 import style from "./button.module.css";
+import cls from "classnames";
 
-export const Button = ({ title, onClick }) => {
+export const Button = ({
+  children,
+  onClick,
+  variant = "filled",
+  type = "button",
+}) => {
+  const styleMapper = {
+    filled: style.filled,
+    simple: style.simple,
+  };
   return (
-    <button className={style.button} onClick={onClick}>
-      {title}
+    <button
+      type={type}
+      className={cls(style.button, styleMapper[variant])}
+      onClick={onClick}
+    >
+      {children}
     </button>
   );
 };

@@ -19,7 +19,17 @@ export const rtkApi = createApi({
         method: "GET",
       }),
     }),
+    updateUserData: build.mutation({
+      query: (user) => ({
+        url: `/users/${user.id}`,
+        method: "PATCH",
+      }),
+    }),
   }),
 });
 
-export const { useGetUsersQuery, useGetUserByIdQuery } = rtkApi;
+export const {
+  useGetUsersQuery,
+  useGetUserByIdQuery,
+  useUpdateUserDataMutation,
+} = rtkApi;

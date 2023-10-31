@@ -1,6 +1,10 @@
 .input {
   color: var(--grey);
   font: var(--desktop-font-text1);
+  border-radius: 50px;
+  border: 2px solid var(--light-grey);
+  padding: 0 8px 0 16px;
+  margin-bottom: 24px;
 
   &:hover {
     color: var(--accent);

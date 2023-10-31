@@ -11,8 +11,12 @@
   display: flex;
   gap: 8px;
   align-items: center;
-  color: var(--logo);
+  color: var(--logo-text-color);
   cursor: pointer;
+
+  .logoText {
+    font-family: "Inter", sans-serif;
+  }
 }
 
 .menu {
@@ -46,4 +50,25 @@
   background-color: var(--dark-white);
   padding: 0 140px;
   min-height: calc(100vh - 56px);
+}
+
+@media (width <= 768px) {
+  .header {
+    padding: 16px 11px;
+  }
+  .outlet {
+    padding: 0 16px;
+  }
+
+  .menu {
+    & svg {
+      display: none;
+    }
+  }
+
+  .user {
+    & span {
+      display: none;
+    }
+  }
 }

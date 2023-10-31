@@ -1,0 +1,45 @@
+.section {
+  display: flex;
+  gap: 40px;
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  background-color: var(--full-white);
+  border-radius: 16px;
+  gap: 40px;
+  width: 360px;
+}
+
+.profileData {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  & span {
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--light-grey);
+  }
+}
+
+.userData {
+  padding: 40px;
+  border-radius: 16px;
+  width: 100%;
+  background-color: var(--full-white);
+}
+
+.userDataTitle {
+  font: var(--desktop-font-title);
+  margin-bottom: 16px;
+  color: var(--black);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 420px;
+  margin-top: 24px;
+}
